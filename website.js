@@ -28,4 +28,12 @@ close_button.addEventListener("click",()=>{
     player.src = ""
 })
 
+let profile_picture  = document.querySelector(".profile-picture")
+document.addEventListener('mouseenter', function(e){
+    let dist_x = e.pageX - window.innerWidth/2
+    let dist_y = e.pageY - window.innerHeight/2
+    let anglex = dist_x/(window.innerWidth/2)
+    let angley = dist_y/(window.innerHeight/2)
+    profile_picture.style.transform = `rotateX(100deg) rotateY(100deg)`
+})
 

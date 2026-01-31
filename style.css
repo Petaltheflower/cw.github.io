@@ -29,19 +29,92 @@ body{
     width: 70px;
     height: 50px;
 }
-.header-buttons{
+
+/* 8 */
+.header-buttons {
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #f0ecfc 0%, oklch(92.229% 0.13478 150.491) 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
     height: 40px;
     outline: none;
-    border: 0;
-    background: transparent;
     font-size: 30px;
     color: beige;
     font-weight: 400;
+    border-radius: 20px;
+    background: transparent;
+    margin-left: 20px;
+    width: 160px;
+    
+}
+.header-buttons span {
+  position: relative;
+  display: block;
+  width: 160px;
+  height: 40px;
+}
+.header-buttons:before,
+.header-buttons:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: oklch(92.229% 0.13478 150.491);
+  /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+  transition: all 0.3s ease;
+}
+.header-buttons:before{
+   height: 0%;
+   width: 2px;
+}
+.header-buttons:after {
+  width: 0%;
+  height: 2px;
+}
+.header-buttons:hover:before {
+  height: 40px;
+}
+.header-buttons:hover:after {
+  width: 160px;
 }
 .header-buttons:hover{
-    border-radius: 10px;
-    background: lightgreen;
+  background: transparent;
 }
+.header-buttons span:hover{
+  color: oklch(92.229% 0.13478 150.491);
+}
+.header-buttons span:before,
+.header-buttons span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: oklch(92.229% 0.13478 150.491);
+  /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+  transition: all 0.3s ease;
+}
+.header-buttons span:before {
+  width: 2px;
+  height: 0%;
+}
+.header-buttons span:after {
+  height: 2px;
+  width: 0%;
+}
+.header-buttons span:hover:before {
+  height: 40px;
+}
+.header-buttons span:hover:after {
+  width: 160px;
+}
+
 .profile{
     display: flex;
     flex-direction: row;
@@ -59,6 +132,7 @@ body{
     margin-bottom: 40px;
     position: relative;
     top: 40px;
+    perspective: 400px;
 }
 .profile-image{
     width: 500px;
