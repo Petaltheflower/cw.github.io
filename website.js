@@ -16,6 +16,7 @@ let video = document.querySelector(".video")
 let player = document.querySelector("#video-player")
 let close_button = document.querySelector(".close-button")
 let images = document.querySelectorAll(".image")
+if (images.length > 0 && video && close_button){
 images.forEach(i => {
     i.addEventListener("click", ()=>{
         let video_url = i.getAttribute("data-video")
@@ -27,13 +28,18 @@ close_button.addEventListener("click",()=>{
     video.style.display = "none"
     player.src = ""
 })
+}
+
 
 let profile_picture  = document.querySelector(".profile-picture")
-document.addEventListener('mouseenter', function(e){
-    let dist_x = e.pageX - window.innerWidth/2
-    let dist_y = e.pageY - window.innerHeight/2
-    let anglex = dist_x/(window.innerWidth/2)
-    let angley = dist_y/(window.innerHeight/2)
-    profile_picture.style.transform = `rotateX(100deg) rotateY(100deg)`
+document.addEventListener('mousemove', function(e){
+    let rect = profile_picture.getBoundingClientRect()
+    let image_x = rect.left + rect.width
+    let image_y = rect.top + rect.height
+    let dist_x = e.clientX - image_x
+    let dist_y = e.clientY - image_y
+    let anglex = dist_y/(window.innerWidth/2) * -20
+    let angley = dist_x/(window.innerHeight/2) * 20
+    profile_picture.style.transform = `rotateX(${anglex}deg) rotateY(${angley}deg)`
 })
 

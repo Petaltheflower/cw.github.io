@@ -45,14 +45,14 @@ body{
     border-radius: 20px;
     background: transparent;
     margin-left: 20px;
-    width: 160px;
+    position: relative;
     
 }
 .header-buttons span {
   position: relative;
   display: block;
-  width: 160px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
 }
 .header-buttons:before,
 .header-buttons:after {
@@ -76,10 +76,10 @@ body{
   height: 2px;
 }
 .header-buttons:hover:before {
-  height: 40px;
+  height: 100%;
 }
 .header-buttons:hover:after {
-  width: 160px;
+  width: 100%;
 }
 .header-buttons:hover{
   background: transparent;
@@ -109,10 +109,10 @@ body{
   width: 0%;
 }
 .header-buttons span:hover:before {
-  height: 40px;
+  height: 100%;
 }
 .header-buttons span:hover:after {
-  width: 160px;
+  width: 100%;
 }
 
 .profile{
@@ -121,7 +121,7 @@ body{
     align-items: center;
     width: 100vw;
     height: 100vh;
-
+    perspective: 1000px;
     
 }
 
@@ -132,7 +132,7 @@ body{
     margin-bottom: 40px;
     position: relative;
     top: 40px;
-    perspective: 400px;
+
 }
 .profile-image{
     width: 500px;
